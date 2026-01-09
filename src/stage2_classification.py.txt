@@ -1,0 +1,26 @@
+"""
+Stage 2: Wildlife Species Classification
+
+This module classifies detected animal regions into known wildlife species
+using a CNN-based classifier.
+
+Model training and weights are handled offline.
+"""
+
+def classify_species(image):
+    """
+    Classifies an animal image into a wildlife species.
+
+    Args:
+        image: Cropped animal image
+
+    Returns:
+        species_name (str)
+        confidence_score (float)
+    """
+
+    # Placeholder logic for ResNet-18 inference
+    species_name = "deer"
+    confidence_score = 0.82
+
+    return species_name, confidence_score

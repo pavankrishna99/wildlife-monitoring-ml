@@ -1,0 +1,24 @@
+"""
+Stage 3: Novelty Detection
+
+This module identifies uncertain or unseen species by analyzing
+confidence and feature reconstruction behavior.
+
+The novelty model is trained offline.
+"""
+
+def detect_novelty(confidence_score, threshold=0.6):
+    """
+    Determines whether a prediction is novel or known.
+
+    Args:
+        confidence_score (float): Classification confidence
+        threshold (float): Novelty decision threshold
+
+    Returns:
+        "KNOWN" or "UNKNOWN"
+    """
+
+    if confidence_score < threshold:
+        return "UNKNOWN"
+    return "KNOWN"

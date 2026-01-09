@@ -1,0 +1,27 @@
+"""
+Stage 1: Empty Frame Filtering
+
+This module represents the first stage of the wildlife monitoring pipeline.
+It filters out empty camera trap images and forwards only animal-containing
+frames to the next stage.
+
+Model training is assumed to be performed offline.
+"""
+
+def detect_animal_presence(image):
+    """
+    Determines whether an image contains an animal.
+
+    Args:
+        image: Preprocessed image input
+
+    Returns:
+        True  -> Animal detected
+        False -> Empty frame
+    """
+
+    # Placeholder for MobileNet-based inference
+    # In actual implementation, a trained CNN is used
+    prediction_score = 0.7
+
+    return prediction_score > 0.5

@@ -1,0 +1,36 @@
+"""
+Wildlife Monitoring Pipeline
+
+Coordinates all stages of the wildlife monitoring system:
+1. Empty frame filtering
+2. Species classification
+3. Novelty detection
+"""
+
+from src.stage1_detection import detect_animal_presence
+from src.stage2_classification import classify_species
+from src.novelty_detection import detect_novelty
+
+
+def run_pipeline(image):
+    """
+    Executes the full wildlife monitoring pipeline.
+
+    Args:
+        image: Input camera trap image
+
+    Returns:
+        Dictionary containing final prediction
+    """
+
+    if not detect_animal_presence(image):
+        return {"result": "Empty Frame"}
+
+    species, confidence = classify_species(image)
+    novelty_status = detect_novelty(confidence)
+
+    return {
+        "species": species,
+        "confidence": confidence,
+        "status": novelty_status
+    }
