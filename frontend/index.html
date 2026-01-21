@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Automated Two-Stage Deep Learning Pipeline for Wildlife Monitoring
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <i class="fas fa-leaf"></i>
+                <h1>
+                    Automated Two-Stage Deep Learning Pipeline
+                </h1>
+                <p>
+                    Efficient Wildlife Monitoring Using Camera Trap Images
+                </p>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload Wildlife Image</h3>
+                        <p>Drag & drop an image or click to browse</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <div class="image-preview">
+                        <img id="previewImage" alt="Preview">
+                        <button class="remove-btn" onclick="clearImage()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button class="analyze-btn" id="analyzeBtn" onclick="analyzeImage()">
+                        <i class="fas fa-search"></i>
+                        Analyze Image
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2>Analysis Results</h2>
+                        <div class="status-badge" id="statusBadge"></div>
+                    </div>
+
+                    <div class="result-image">
+                        <img id="resultImage" alt="Analysis result">
+                    </div>
+
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-paw"></i>
+                                Species Detected
+                            </div>
+                            <div class="detail-value" id="speciesValue">-</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-percentage"></i>
+                                Confidence Score
+                            </div>
+                            <div class="detail-value" id="confidenceValue">-</div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-label">
+                                <i class="fas fa-chart-line"></i>
+                                Novelty Score
+                            </div>
+                            <div class="detail-value" id="noveltyValue">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>Analyzing Image...</h3>
+                    <p>This may take a few moments</p>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error</h3>
+                    <p id="errorMessage">Something went wrong. Please try again.</p>
+                    <button class="retry-btn" onclick="hideError()">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>
+                    © 2026 Automated Two-Stage Deep Learning Pipeline for Wildlife Monitoring
+                </p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">
+                    Academic Research Project — Camera Trap Image Analysis using Deep Learning
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

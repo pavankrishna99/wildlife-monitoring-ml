@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# Models
+backend/models/*.pt
+backend/models/*.pth
+
+# Runtime folders
+backend/uploads/
+backend/results/
+
+# External repos
+backend/yolov5/
+CameraTraps/
+testimages/
+
+# Editor / OS
+.vscode/
+.DS_Store
